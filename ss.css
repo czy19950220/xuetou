@@ -1,0 +1,202 @@
+/* 简单的样式，您可以根据需要自定义 */
+		body {
+			font-family: Arial, sans-serif;
+		}
+		#output {
+			margin-top: 20px;
+			font-size: 14px;
+			line-height: 1.6;
+		}
+		/* 自定义滚动条的宽度 */
+		::-webkit-scrollbar {
+		    width: 12px; /* 垂直滚动条宽度 */
+		    height: 12px; /* 水平滚动条高度 */
+		}
+		
+		/* 自定义滚动条轨道 */
+		::-webkit-scrollbar-track {
+		    background: linear-gradient(45deg, #f0f0f0, #dcdcdc); /* 渐变色轨道背景 */
+		    border-radius: 10px; /* 设置轨道圆角 */
+		    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* 轨道内阴影 */
+		}
+		
+		/* 自定义滚动条滑块 */
+		::-webkit-scrollbar-thumb {
+		    background: linear-gradient(45deg, #0077ff, #00bfff); /* 渐变色滑块 */
+		    border-radius: 10px; /* 滑块的圆角 */
+		    border: 3px solid #f1f1f1; /* 滑块周围的边框颜色 */
+		    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 滑块的阴影效果 */
+		}
+		
+		/* 滑块悬停效果 */
+		::-webkit-scrollbar-thumb:hover {
+		    background: linear-gradient(45deg, #00bfff, #0077ff); /* 悬停时改变滑块渐变 */
+		    cursor: pointer; /* 鼠标悬停时变成手型 */
+		}
+		
+		/* 自定义水平滚动条轨道 */
+		::-webkit-scrollbar-horizontal {
+		    height: 12px; /* 自定义水平滚动条高度 */
+		}
+		
+		/* 自定义水平滚动条滑块 */
+		::-webkit-scrollbar-thumb:horizontal {
+		    background: linear-gradient(45deg, #0077ff, #00bfff); /* 水平滚动条滑块渐变 */
+		    border-radius: 10px;
+		    border: 3px solid #f1f1f1;
+		    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 滑块的阴影效果 */
+		}
+		
+		/* 水平滚动条悬停效果 */
+		::-webkit-scrollbar-thumb:horizontal:hover {
+		    background: linear-gradient(45deg, #00bfff, #0077ff); /* 水平滚动条悬停时的渐变 */
+		}
+		
+		/* 兼容 Firefox */
+		scrollbar {
+		    width: 12px;
+		    height: 12px;
+		}
+		
+		/* 兼容 Internet Explorer 和 Edge */
+		html {
+		    scrollbar-base-color: #f0f0f0;
+		    scrollbar-face-color: #0077ff;
+		    scrollbar-track-color: #dcdcdc;
+		}
+		
+		/* 兼容 IE */
+		::-ms-scrollbar {
+		    width: 12px;
+		    height: 12px;
+		}
+		
+		::-ms-scrollbar-track {
+		    background: #f0f0f0;
+		}
+		
+		::-ms-scrollbar-thumb {
+		    background: #0077ff;
+		    border-radius: 10px;
+		}
+		
+		/* 支持 Edge */
+		::-ms-scrollbar-thumb {
+		    background: linear-gradient(45deg, #0077ff, #00bfff); /* 渐变色滑块 */
+		    border-radius: 10px;
+		    border: 3px solid #f1f1f1; /* 滑块周围的边框颜色 */
+		}
+		
+		
+		/* 设置拖拽区域的样式 */
+		#dragArea {
+			width: 100%;
+			height: 300px; /* 自定义拖拽区域的高度 */
+			border: 2px dashed #aaa;
+			border-radius: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #aaa;
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+
+		#dragArea.dragover {
+			border-color: #4CAF50;
+			color: #4CAF50;
+		}
+		
+		/* 表格样式 */
+		table {
+		  width: 100%;
+		  border-collapse: collapse; /* 合并边框 */
+		  margin-top: 20px; /* 添加上方间距 */
+		  table-layout: auto; /* 自动调整单元格宽度 */
+		  resize: horizontal; /* 启用水平调整大小 */
+		  overflow: auto; /* 添加溢出滚动条 */
+		}
+	
+		table, th, td {
+		  border: 2px solid black; /* 设置表格、单元格和表头的边框 */
+		}
+	
+		th, td {
+		  padding: 10px; /* 设置单元格的内边距 */
+		  text-align: left; /* 设置文本左对齐 */
+		}
+	
+		th {
+		  background-color: #f2f2f2; /* 表头背景色 */
+		  font-weight: bold; /* 表头字体加粗 */
+		}
+		button{
+			
+			-webkit-font-smoothing: antialiased;
+			-webkit-tap-highlight-color: transparent;
+			font-family: inherit;
+			display: inline-block;
+			line-height: 1;
+			white-space: nowrap;
+			cursor: pointer;
+			background: #fff;
+			border: 1px solid #dcdfe6;
+			-webkit-appearance: none;
+			text-align: center;
+			box-sizing: border-box;
+			outline: none;
+			margin: 0;
+			transition: .1s;
+			font-weight: 500;
+			-webkit-user-select: none;
+			padding: 12px 20px;
+			font-size: 14px;
+			border-radius: 4px;
+			color: #fff;
+			background-color: #409eff;
+			border-color: #409eff;
+			margin-left: 10px;
+		}
+		button:hover {
+		    background: #66b1ff;
+		    border-color: #66b1ff;
+		    color: #fff;
+		}
+		
+		#loadingOverlay {
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background: rgba(255, 255, 255, 0.9);
+		    z-index: 9999;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		}
+		
+		.loading-content {
+		    text-align: center;
+		}
+		
+		.loading-spinner {
+		    border: 4px solid #f3f3f3;
+		    border-top: 4px solid #3498db;
+		    border-radius: 50%;
+		    width: 40px;
+		    height: 40px;
+		    margin: 0 auto 10px;
+		    animation: spin 1s linear infinite;
+		}
+		
+		@keyframes spin {
+		    0% { transform: rotate(0deg); }
+		    100% { transform: rotate(360deg); }
+		}
+		
+		.loading-text {
+		    color: #333;
+		    font-size: 16px;
+		    font-weight: bold;
+		}
