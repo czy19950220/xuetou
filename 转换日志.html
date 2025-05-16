@@ -1,8 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数据解析</title>
 	<script type="text/javascript" src="./xlsx.full.min.js"></script>
@@ -13,25 +12,25 @@
 	<h2 id="myTitle">数据解析</h2>
 	<button id="exportAllInOne" class="export-btn" onclick="exportCombinedTables()">一键完整导出</button>
 	<br />
-	
+
 	<!-- 复选框 -->
 	<label>
 		<input type="checkbox" id="checkboxId"> 反转解析错误码(高/低位解析)
 	</label>
 	<div id="progress"></div> <!-- 用于显示进度 -->
-	
+
     <input type="file" id="fileInput" title="请选择一个文件进行上传" />
 
 	<!-- 拖拽上传区域 -->
 	<div id="dragArea">将文件拖到这里上传</div>
 	<h1>日志解析</h1>
 	<button id="hide1" onclick="toggleDisplay(document.getElementById('output'));">隐藏/显示</button>
-	<!-- 在HTML的适当位置添加导出按钮 -->
+	<!-- 在HTML的适当位置添加导出按钮  -->
 	<button id="exportOutput">导出文本文件</button>
     <pre id="output"></pre>
-	
+
 	<pre id="errCode14"></pre>
-	
+
 	<h1>Log12解析</h1>
 	<button id="hide2" onclick="toggleDisplay(document.getElementById('logTable12'));">隐藏/显示</button>
 	<button id="exportButton12">导出为Excel文件</button>
@@ -46,7 +45,7 @@
 		  <!-- Data will be inserted here -->
 		</tbody>
 	</table>
-	
+
 	<h1>Log13解析</h1>
 	<button id="hide2" onclick="toggleDisplay(document.getElementById('logTable13'));">隐藏/显示</button>
 	<button id="exportButton13">导出为Excel文件</button>
@@ -75,7 +74,7 @@
 		  <!-- Data will be inserted here -->
 		</tbody>
 	</table>
-	
+
 	<h1>Log15解析</h1>
 	<button id="hide2" onclick="toggleDisplay(document.getElementById('logTable15'));">隐藏/显示</button>
 	<button id="exportButton15">导出为Excel文件</button>
@@ -90,7 +89,7 @@
 		  <!-- Data will be inserted here -->
 		</tbody>
 	</table>
-	
+
 	<h1>Log16解析</h1>
 	<button id="hide2" onclick="toggleDisplay(document.getElementById('logTable16'));">隐藏/显示</button>
 	<button id="exportButton16">导出为Excel文件</button>
@@ -105,7 +104,7 @@
 		  <!-- Data will be inserted here -->
 		</tbody>
 	</table>
-	
+
 	<h1>Log17解析</h1>
 	<button id="hide2" onclick="toggleDisplay(document.getElementById('logTable17'));">隐藏/显示</button>
 	<button id="exportButton17">导出为Excel文件</button>
@@ -120,7 +119,7 @@
 		  <!-- Data will be inserted here -->
 		</tbody>
 	</table>
-	
+
 	<h1>Log18解析</h1>
 	<button id="hide2" onclick="toggleDisplay(document.getElementById('logTable18'));">隐藏/显示</button>
 	<button id="exportButton18">导出为Excel文件</button>
@@ -135,7 +134,7 @@
 		  <!-- Data will be inserted here -->
 		</tbody>
 	</table>
-	
+
 	<h1>Log19解析</h1>
 	<button id="hide2" onclick="toggleDisplay(document.getElementById('logTable19'));">隐藏/显示</button>
 	<button id="exportButton19">导出为Excel文件</button>
@@ -150,7 +149,7 @@
 		  <!-- Data will be inserted here -->
 		</tbody>
 	</table>
-	
+
 	<h1>Log20解析</h1>
 	<button id="hide2" onclick="toggleDisplay(document.getElementById('logTable20'));">隐藏/显示</button>
 	<button id="exportButton20">导出为Excel文件</button>
@@ -165,16 +164,16 @@
 		  <!-- Data will be inserted here -->
 		</tbody>
 	</table>
-	
+
 	<div id="loadingOverlay" style="display: none;">
 	    <div class="loading-content">
 	        <div class="loading-spinner"></div>
-	        <div class="loading-text">文件生成中，请稍候...</div>
+	        <div class="loading-text">文件生成中,请稍候...</div>
 	    </div>
 	</div>
-	
-	
-	
+
+
+
     <script type="text/javascript" src="./index.js"></script>
 	<script type="text/javascript">
 		// 在JavaScript的末尾添加导出功能
@@ -183,43 +182,44 @@
 				const loading = document.getElementById('loadingOverlay');
 				// 显示加载动画
 				loading.style.display = 'flex';
-				
+
 				// 给浏览器渲染机会
 				setTimeout(() => {
 					const content = output.textContent;
-					
+
 					if (!content) {
 					    alert("没有可导出的内容");
 					    return;
 					}
-							
+
 					// 创建Blob对象
 					const blob = new Blob([content], { type: 'text/plain' });
-					
+
 					// 创建下载链接
 					const link = document.createElement('a');
 					link.href = URL.createObjectURL(blob);
 					link.download = anaFileName.replace(".txt", "-output.txt");
-					
+
 					// 触发下载
 					document.body.appendChild(link);
 					link.click();
-					
+
 					// 清理资源
 					setTimeout(() => {
 					    document.body.removeChild(link);
 					    URL.revokeObjectURL(link.href);
 					}, 0);
-					
-					
+
+
 					loading.style.display = 'none';
 				}, 100);
 			} finally {
 				// 确保最终隐藏加载动画
-				
-			}   
+
+			}
 		});
 
 	</script>
 </body>
+
 </html>
